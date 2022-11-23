@@ -1,0 +1,39 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title mb-1 text-center fs-1 fw-bolder">短網址產生器</h5>
+          <h6 class="card-title mb-5 text-center fs-4" style= "color:#404040" >URL Shortener</h6>
+          <div class="text-center">
+            <img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png"
+              class="img-fluid rounded mb-5 mt-5" style="width:30%" alt="picture of url shortener">
+            <hr>
+          </div>
+          
+          <form method="POST" action="/">
+            <div class="row mb-3 g-2">
+              <label for="length" class="col-md-4 col-form-label">
+                網址
+              </label>
+              <div class="col-md-8">
+                <input type="url" name="url" class="form-control" id="url" placeholder= "Enter a link here" required value="{{originalURL}}">
+                <small class="text-muted form-text"></small>
+              </div>
+            </div>
+            
+            <div class="alert alert-info" role="alert">
+              <span class="me-2">Short URL is:</span>
+              <code>{{shorterURL}}</code>
+            </div>
+            
+  
+            <button class="btn btn-success" type="submit">Shorten URL</button>
+          </form>
+        </div>
+  
+
+      </div>
+    </div>
+  </div>
+</div>
