@@ -5,7 +5,7 @@ const dataSchema = new Schema({
     type: String,
     required: true
   },
-  shortURL: {
+  shortenURL: {
     type: String,
     required: true
   }
