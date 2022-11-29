@@ -36,9 +36,9 @@ app.get('/', (req, res) => {
 //確認db中是否已有該網址的資訊
 app.post('/', (req, res) => {
   let originalURL = req.body.url
-  let shortenURL = urlShortener()
+  
   console.log('req.body:', originalURL)
-  console.log('url:', urlShortener())
+  
   return Data.findOne({ 'originalURL': originalURL })
     .then((data)=>{
       //該筆資料已存在db中
@@ -52,14 +52,30 @@ app.post('/', (req, res) => {
       } else {
         console.log('add to db!')
         //新增該筆資料
+        let shortenURL = urlShortener()
         return Data.create({ originalURL, shortenURL })
         .then(() => res.render('index', { shortenURL: shortenURL, originalURL: originalURL }))
       }
       })
     })
     
-
+//使用產生的短網址連至指定網站
+app.get('/:shortenURL', (req, res) => {
+  let shortURL = req.params.shortenURL
+  console.log('shortURL:', shortURL)
+  return Data.findOne({ 'shortenURL': `https://localhost:3000/${shortURL}`})
+    .then((data) => {
+      if (data !== null) {
+        console.log('find the data:', data)
+        console.log('originalURL:', data.originalURL)
+        res.redirect(data.originalURL)
+      } else {
+        console.log('error')
+      }
+     
+    })
+})
 
 app.listen(port, () => {
-  console.log( `Express is  running on http://localhost:${port}`)
+  console.log( `Express is running on http://localhost:${port}`)
 })
