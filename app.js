@@ -71,6 +71,7 @@ app.get('/:shortenURL', (req, res) => {
         res.redirect(data.originalURL)
       } else {
         console.log('error')
+        res.render('error', { shortURL })
       }
      
     })
