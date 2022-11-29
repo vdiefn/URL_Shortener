@@ -1,9 +1,7 @@
 const express = require('express')
 const router = express.Router()
-
+const urlShortener = require('../../urlShortener')
 const Data = require('../../models/data')
-
-
 
 //確認db中是否已有該網址的資訊
 router.post('/', (req, res) => {
