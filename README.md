@@ -18,6 +18,7 @@
 - 進入專案資料夾
 - 專案下載完成後輸入npm install
 - 安裝完成後接續安裝Express, express-handlebars, mongoose
+- 新增.env檔案設定環境變數，並加入MONGODB_URI = mongodb-srv......
 - 安裝完成後輸入npm run dev
 - 成功啟動後會於終端機看到：Express is running on http://localhost:3000
 - 於瀏覽器輸入http://localhost:3000 開始使用短網址產生器
