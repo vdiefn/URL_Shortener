@@ -1,7 +1,7 @@
 const port = 3000
 
 function urlShortener() {
-  const url = "https://www.google.com.tw"
+  const url = "http://www.google.com.tw"
   const splitUrl = url.split('//')
   function randomWords() {
     let word = []

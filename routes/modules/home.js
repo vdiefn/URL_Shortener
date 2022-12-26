@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
 //使用產生的短網址連至指定網站
 router.get('/:shortenURL', (req, res) => {
   let shortURL = req.params.shortenURL
-  return Data.findOne({ 'shortenURL': `https://localhost:3000/${shortURL}` })
+  return Data.findOne({ 'shortenURL': `http://localhost:3000/${shortURL}` })
     .then((data) => {
       if (data !== null) {
         res.redirect(data.originalURL)
